@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-  background-image: url("./resources/background.png");
+  background-image: url("./resources/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
