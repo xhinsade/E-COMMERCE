@@ -1,14 +1,98 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes Collection - Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="shop.css">
 </head>
-
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar-logo">Nike Shoes</h1>
+            <ul class="navbar-links">
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="shop.html"><i class="fas fa-store"></i> Shop</a></li>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Main Shop Container -->
+    <div class="container">
+        <h2 class="shop-title">Nike Shoes Collection</h2>
+
+        <!-- Filters Section -->
+        <div class="filters">
+            <select>
+                <option value="newest">Newest Arrivals</option>
+                <option value="popular">Most Popular</option>
+                <option value="low-to-high">Price: Low to High</option>
+                <option value="high-to-low">Price: High to Low</option>
+            </select>
+            <select>
+                <option value="all">All Sizes</option>
+                <option value="7">Size 7</option>
+                <option value="8">Size 8</option>
+                <option value="9">Size 9</option>
+            </select>
+        </div>
+
+        <!-- Product Display Section -->
+        <section class="products">
+            <div class="product-card">
+                <img src="images/nike-air-max.jpg" alt="Nike Air Max">
+                <h3>Air Max 270</h3>
+                <p>Revolutionary cushioning for all-day comfort.</p>
+                <p class="price">$120</p>
+                <button class="btn-primary" onclick="addToCart('Air Max 270', 120)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/nike-react.jpg" alt="Nike React Infinity">
+                <h3>React Infinity</h3>
+                <p>Engineered for smoother strides and reduced risk of injury.</p>
+                <p class="price">$150</p>
+                <button class="btn-primary" onclick="addToCart('React Infinity', 150)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/nike-zoom-fly.jpg" alt="Nike Zoom Fly">
+                <h3>Zoom Fly</h3>
+                <p>Designed for speed and unmatched comfort on race day.</p>
+                <p class="price">$130</p>
+                <button class="btn-primary" onclick="addToCart('Zoom Fly', 130)">Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- Cart Summary -->
+        <section class="cart-summary">
+            <p>Items in Cart: <span id="cart-item-count">0</span></p>
+            <button class="btn-primary" onclick="viewCart()">View Cart (<span id="cart-count">0</span>)</button>
+            <button class="btn-primary" onclick="proceedToCheckout()">Go to Checkout</button>
+        </section>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <p>Total: $<span id="total-price">0</span></p>
+            <button class="btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © <strong><span>2024 Nike Shoes Collection</span></strong>. All Rights Reserved
+    </footer>
+
+    <script src="shop.js"></script>
 </body>
-
 </html>
