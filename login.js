@@ -16,10 +16,14 @@ function toggleForms() {
 function handleSignup(event) {
   event.preventDefault();
 
-  const username = document.getElementById('signup-username').value;
-  const password = document.getElementById('signup-password').value;
+  const usernameField = document.getElementById('signup-username');
+  const passwordField = document.getElementById('signup-password');
+  const emailField = document.getElementById('signup-email'); // Add email field
+  
+  const username = usernameField.value;
+  const password = passwordField.value;
+  const email = emailField.value;
 
-  // Retrieve existing users from localStorage or initialize an empty array
   const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
 
   // Check if the username already exists
@@ -27,24 +31,31 @@ function handleSignup(event) {
 
   if (userExists) {
     alert('Username already exists.');
-    return;  // Stop execution if the username exists
+    return;
   }
 
-  // If the username doesn't exist, create a new user and save it
-  existingUsers.push({ username, password });
-  localStorage.setItem('users', JSON.stringify(existingUsers));
+  // Confirm account creation
+  const createAccount = confirm('Are you sure you want to create this account?');
 
-  // Show signup confirmation
-  alert('Signup successful! You can now log in.');
+  if (createAccount) {
+    existingUsers.push({ username, password, email }); // Save email with username and password
+    localStorage.setItem('users', JSON.stringify(existingUsers));
 
-  // Clear the input fields after submission
-  document.getElementById('signup-username').value = '';
-  document.getElementById('signup-password').value = '';
+    alert('Signup successful! You can now log in.');
 
-  // Optionally, auto-toggle to login form after signup
-  setTimeout(() => {
-    toggleForms(); 
-  }, 2000); // 2 seconds delay before toggling to login form
+    // Clear input fields and switch to login form
+    usernameField.value = '';
+    passwordField.value = '';
+    emailField.value = ''; // Clear email field
+    toggleForms();
+  } else {
+    // Clear the input fields if the user cancels
+    usernameField.value = '';
+    passwordField.value = '';
+    emailField.value = ''; // Clear email field
+
+    alert('Signup canceled.');
+  }
 }
 
 // Login handling
@@ -71,6 +82,7 @@ function handleLogin(event) {
   // Clear the input fields after submission
   document.getElementById('login-username').value = '';
   document.getElementById('login-password').value = '';
+  document.getElementById('login-email').value = '';
 
   // Hide notification after 3 seconds
   setTimeout(() => {
@@ -82,45 +94,32 @@ function handleLogin(event) {
 function handleForgotPassword(event) {
   event.preventDefault();
 
-  const username = document.getElementById('forgot-username').value;
+  const usernameField = document.getElementById('forgot-username');
+  const username = usernameField.value;
 
-  // Get all users from localStorage
   const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-  // Check if username exists
   const user = existingUsers.find(user => user.username === username);
 
-  const notification = document.getElementById('forgot-password-notification');
-
   if (user) {
-    // If username exists, ask for new password
     const newPassword = prompt('Enter your new password:');
     if (newPassword) {
-      user.password = newPassword;  // Update password
-      localStorage.setItem('users', JSON.stringify(existingUsers));  // Save updated user data
+      user.password = newPassword;
+      localStorage.setItem('users', JSON.stringify(existingUsers));
 
-      notification.style.display = 'block';
-      notification.style.color = 'green';
-      notification.textContent = 'Password reset successful! You can now log in with your new password.';
+      alert('Password reset successful! You can now log in with your new password.');
+
+      // Clear input and automatically switch to login form
+      usernameField.value = '';
+      toggleForms(); // Switch to login form
     } else {
-      notification.style.display = 'block';
-      notification.style.color = 'red';
-      notification.textContent = 'Password reset failed. Please try again.';
+      alert('Password reset failed. Please try again.');
     }
   } else {
-    // If username doesn't exist
-    notification.style.display = 'block';
-    notification.style.color = 'red';
-    notification.textContent = 'Username not found. Please check and try again.';
+    alert('Username not found. Please check and try again.');
   }
 
   // Clear the input field after submission
-  document.getElementById('forgot-username').value = '';
-
-  // Hide notification after 3 seconds
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000);
+  usernameField.value = '';
 }
 
 // Show Forgot Password form
