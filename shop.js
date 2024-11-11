@@ -59,30 +59,81 @@ function proceedToCheckout() {
     alert("Proceeding to checkout...");
 }
 
-// Function to add items to the cart and store them in localStorage
-function addToCart(itemName, itemPrice) {
-    // Create an object to hold the item data
-    const item = { name: itemName, price: itemPrice };
+// Function to view the cart page
+function viewCart() {
+    // Redirect to the cart page
+    window.location.href = "cart.html";
+}
 
-    // Retrieve the current cart from localStorage or initialize it as an empty array
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Function to add items to the cart (you can implement the cart logic here)
+function addToCart(productName, productPrice) {
+    // Here you can save the cart data to localStorage or a cart object
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const product = {
+        name: productName,
+        price: productPrice,
+        quantity: 1 // Assuming the initial quantity is 1
+    };
 
-    // Add the new item to the cart
-    cart.push(item);
+    // Check if product is already in the cart and update quantity
+    const existingProduct = cart.find(item => item.name === productName);
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push(product);
+    }
 
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // Save updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Update the cart count on the page
+    // Update cart count on the shop page
     updateCartCount();
 }
 
-// Function to update the cart item count in the UI
+// Function to update the cart item count on the page
 function updateCartCount() {
-    // Get the cart from localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Update the cart count on the page
-    document.getElementById('cart-item-count').textContent = cart.length;
-    document.getElementById('cart-count').textContent = cart.length;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").innerText = cartCount;
+    document.getElementById("cart-item-count").innerText = cartCount;
 }
+
+// Update cart count when the page loads
+document.addEventListener("DOMContentLoaded", updateCartCount);
+<!-- Shop Page (shop.html) -->
+// Function to add items to the cart
+function addToCart(productName, productPrice) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    const product = {
+        name: productName,
+        price: productPrice,
+        quantity: 1 // Assuming the initial quantity is 1
+    };
+
+    // Check if product is already in the cart and update quantity
+    const existingProduct = cart.find(item => item.name === productName);
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push(product);
+    }
+
+    // Save updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Update cart count on the shop page
+    updateCartCount();
+}
+
+// Function to update the cart item count on the page
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-count").innerText = cartCount;
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
+

@@ -1,25 +1,12 @@
-// Sample cart data (you can dynamically fetch this from a database or local storage)
-let cartItems = [
-    {
-        name: "Air Max 270",
-        price: 120,
-        quantity: 1,
-        image: "images/nike-air-max.jpg"
-    },
-    {
-        name: "React Infinity",
-        price: 150,
-        quantity: 2,
-        image: "images/nike-react.jpg"
-    }
-];
 
-// Function to display items in the cart
+
+// Sample cart data (from localStorage)
 function displayCartItems() {
     const cartContainer = document.getElementById("cart-items");
     cartContainer.innerHTML = ""; // Clear current cart items
 
     let total = 0;
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
     cartItems.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
@@ -37,7 +24,6 @@ function displayCartItems() {
                 </div>
             </div>
         `;
-
         cartContainer.innerHTML += cartItemHTML;
     });
 
@@ -50,13 +36,17 @@ function updateQuantity(index, newQuantity) {
         newQuantity = 1; // Ensure the quantity doesn't go below 1
     }
 
-    cartItems[index].quantity = newQuantity;
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    cartItems[index].quantity = parseInt(newQuantity);
+    localStorage.setItem("cart", JSON.stringify(cartItems)); // Save the updated cart back to localStorage
     displayCartItems(); // Re-render the cart with updated quantities
 }
 
 // Remove an item from the cart
 function removeItem(index) {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.splice(index, 1); // Remove the item at the specified index
+    localStorage.setItem("cart", JSON.stringify(cartItems)); // Save the updated cart back to localStorage
     displayCartItems(); // Re-render the cart after removal
 }
 
@@ -68,3 +58,4 @@ function proceedToCheckout() {
 
 // Initialize cart on page load
 document.addEventListener("DOMContentLoaded", displayCartItems);
+
