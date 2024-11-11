@@ -1,0 +1,241 @@
+/* General body styling */
+body {
+  background-image: url("./resources/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 0;
+  /* Adjust the value based on your header height */
+  color: #2A3E52;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Centered container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  border: 1px solid #d3d8de; /* Light Gray-Blue */
+  box-sizing: border-box;
+}
+/* Form Group Styling */
+.form-group {
+    text-align: left; /* Aligns label to the left */
+    margin-bottom: 15px; /* Adds space between each form group */
+    display: flex;
+    align-items: center;
+}
+
+/* Label Styling */
+.form-group label {
+    display: inline-block;
+    width: 100px; /* Fixed width to align labels consistently */
+    font-size: 16px;
+    color: #2A3E52; /* Matches text color */
+    margin-right: 10px;
+}
+
+/* Input Styling */
+.login-main input, .signup-main input, .forgot-password-main input {
+    width: 100%; /* Takes remaining space next to the label */
+    max-width: 300px; /* Max width for larger screens */
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #d3d8de;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #2A3E52;
+    background-color: #f0f4fa;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Main form styling */
+.login-main, .signup-main, .forgot-password-main {
+  background-color: rgba(248, 249, 253, 0.95); /* Light Gray-Blue with transparency */
+  text-align: center;
+  color: #2A3E52; /* Dark Slate Blue for text */
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 12px; /* More rounded corners */
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid #d3d8de; /* Light Gray-Blue */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Button styling */
+.login-main button, .signup-main button, .forgot-password-main button {
+  margin-top: 3rem;
+  font-size: 18px;
+  background-color: #4a90e2; /* Medium Blue */
+  color: #ffffff; /* White */
+  border: none;
+  cursor: pointer;
+  width: 300px; /* Make button width the same as input fields */
+  height: 40px; /* Same height as input fields */
+  border-radius: 20px; /* More rounded corners */
+  transition: background-color 0.3s;
+}
+
+.login-main button:hover, .signup-main button:hover, .forgot-password-main button:hover {
+  background-color: #357ABD; /* Darker Blue */
+}
+
+/* Focused input border styling */
+.login-main input:focus, .signup-main input:focus, .forgot-password-main input:focus {
+  border-color: #4a90e2; /* Medium Blue */
+  outline: none;
+}
+
+/* Password container styling for toggle visibility */
+.password-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+/* Toggle icon styling */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .login-main input, .signup-main input, .forgot-password-main input, 
+  .login-main button, .signup-main button, .forgot-password-main button {
+    width: 90%;
+  }
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2A3E52; /* Dark Slate Blue */
+  padding: 2px;
+  border-bottom: 5px solid #FFFFFF;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-grow: 1;
+}
+
+.header-left h1 {
+  font-size: 25px;
+  color: #F0F4FA; /* Very Light Blue */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.logo-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+/* Footer styling */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2A3E52; /* Dark Slate Blue */
+  color: #f0f4fa; /* Very Light Blue */
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+  border-top: solid 5px #FFFFFF;
+}
+
+/* Form styling for Forgot Password */
+.forgot-password-main {
+  background-color: rgba(248, 249, 253, 0.95); /* Light Gray-Blue */
+  text-align: center;
+  color: #2A3E52; /* Dark Slate Blue */
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid #d3d8de; /* Light Gray-Blue */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input styling for Forgot Password */
+.forgot-password-main input {
+  display: block;
+  margin: 10px auto;
+  width: 300px; /* Ensure all inputs have the same width */
+  height: 40px; /* Ensure all inputs have the same height */
+  padding: 10px; /* Uniform padding inside the input fields */
+  border: 1px solid #d3d8de; /* Light Gray-Blue */
+  border-radius: 20px; /* More rounded corners */
+  font-size: 16px;
+  color: #2A3E52;
+  background-color: #f0f4fa; /* Very Light Blue */
+}
+
+/* Button styling for Forgot Password */
+.forgot-password-main button {
+  margin-top: 3rem;
+  font-size: 18px;
+  background-color: #4a90e2; /* Medium Blue */
+  color: #ffffff; /* White */
+  border: none;
+  cursor: pointer;
+  width: 300px; /* Make button width the same as input fields */
+  height: 40px; /* Same height as input fields */
+  border-radius: 20px; /* More rounded corners */
+  transition: background-color 0.3s;
+}
+
+.forgot-password-main button:hover {
+  background-color: #357ABD; /* Darker Blue */
+}
+
+/* Focused input border styling for Forgot Password */
+.forgot-password-main input:focus {
+  border-color: #4a90e2; /* Medium Blue */
+  outline: none;
+}
+
+/* Responsive design adjustments for Forgot Password */
+@media (max-width: 600px) {
+  .forgot-password-main input, .forgot-password-main button {
+    width: 90%;
+  }
+}

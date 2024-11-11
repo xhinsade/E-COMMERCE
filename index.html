@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CwinX</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <img src="images/logo.png" alt="CwinX Logo" class="logo-img">
+            <h1>CwinX</h1>
+        </div>
+    </div>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Login Form -->
+        <main class="login-main" id="login-main">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <div class="password-container">
+                        <input type="password" id="login-password" name="password" required>
+                       
+                        <img id="toggleLoginPassword" class="toggle-password" src="resources/hidePassword.png" alt="Toggle Password Visibility">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">LOG IN</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign up here</a></p>
+            <p><a href="#" onclick="showForgotPasswordForm()">Forgot Password?</a></p>
+        </main>
+
+        <!-- Forgot Password Form -->
+        <main class="forgot-password-main" id="forgot-password-main" style="display:none;">
+            <h2>Forgot Password</h2>
+            <form id="forgotPasswordForm" onsubmit="handleForgotPassword(event)">
+                <div class="form-group">
+                    <label for="forgot-username">Username:</label>
+                    <input type="text" id="forgot-username" name="username" required>
+                </div>
+                <button type="submit" class="btn-primary">Reset Password</button>
+            </form>
+            <p><a href="#" onclick="showLoginForm()">Back to Login</a></p>
+        </main>
+
+        <!-- Sign Up Form -->
+        <main class="signup-main" id="signup-main" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <div class="password-container">
+                        <input type="password" id="signup-password" name="password" required>
+                        <img id="toggleSignupPassword" class="toggle-password" src="resources/hidePassword.png" alt="Toggle Password Visibility">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">SIGN UP</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Log in here</a></p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © <strong><span>CwinX House Keeping</span></strong>. All Rights Reserved
+    </footer>
+
+    <script src="login.js" defer></script>
+</body>
+</html>
