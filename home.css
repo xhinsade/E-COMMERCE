@@ -16,41 +16,56 @@ body {
     min-height: 100vh;
 }
 
-/* Navbar */
+/* Navigation Bar */
 .navbar {
     background-color: #111;
-    padding: 1rem 2rem;
-    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-..navbar-container {
+.navbar-container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .navbar-logo {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #fff;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
-    margin-left: auto; /* Aligns links to the right */
+    gap: 20px;
 }
 
-.navbar-links li a {
-    color: #fff;
+.navbar-links li {
+    display: inline-block;
+}
+
+.navbar-links a {
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.navbar-links li a:hover {
-    color: #f39c12;
+.navbar-links a:hover {
+    color: #e60012;
 }
+
+.navbar-links a i {
+    font-size: 18px;
+}
+
 
 /* Hero Section */
 .hero {
