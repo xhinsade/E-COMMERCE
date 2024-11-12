@@ -25,14 +25,24 @@
     <!-- Cart Page Content -->
     <div class="container">
         <h2>Your Cart</h2>
+        
+        <!-- Cart Items Header -->
+        <div class="cart-items-header">
+            <div class="header-item">Item</div>
+            <div class="header-item">Cost</div>
+            <div class="header-item">Quantity</div>
+        </div>
+
         <div id="cart-items">
             <!-- Cart items will be inserted here -->
         </div>
-        <p>Total: $<span id="total-price">0</span></p>
+
+        <div class="total-container">
+            <p>Total: $<span id="total-price">0</span></p>
+        </div>
         <button class="btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         © <strong><span>2024 Nike Shoes Collection</span></strong>. All Rights Reserved
     </footer>
