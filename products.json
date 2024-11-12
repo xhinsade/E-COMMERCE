@@ -1,19 +1,250 @@
-[
+ [
     {
-        "name": "Air Max 270",
-        "description": "A fan-favorite with unparalleled comfort and bold design. This shoe has topped the charts.",
-        "price": "$120",
-        "imageUrl": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/gorfwjchoasrrzr1fggt/AIR+MAX+270.png"},
-    {
-        "name": "React Infinity",
-        "description": "Engineered for comfort during long runs, the React Infinity continues to lead the way for athletes.",
-        "price": "$150",
-        "imageUrl": "https://example.com/resources/nike-react-2024.jpeg"
+      "id": 1,
+      "name": "Nike Air Zoom Pegasus 40",
+      "category": "Running Shoes",
+      "price": 130,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Black", "White", "Blue"],
+      "image_url": "https://example.com/images/air-zoom-pegasus-40.jpg",
+      "description": "A versatile running shoe designed for comfort and speed, featuring the Air Zoom cushioning technology.",
+      "source": "NIKE.COM"
     },
     {
-        "name": "Zoom Fly",
-        "description": "Designed for speed, the Zoom Fly has become a staple for serious runners.",
-        "price": "$130",
-        "imageUrl": "https://example.com/resources/nike-zoom-fly.jpeg"
+      "id": 2,
+      "name": "Nike React Infinity Run Flyknit",
+      "category": "Running Shoes",
+      "price": 160,
+      "size_options": [7, 8, 9, 10, 11, 12, 13],
+      "color_options": ["Grey", "Red", "Black"],
+      "image_url": "https://example.com/images/react-infinity.jpg",
+      "description": "Engineered for long runs with added cushioning to reduce injury and provide a soft, responsive feel.",
+      "source": "GEARJUNKIE"
+    },
+    {
+      "id": 3,
+      "name": "Nike ZoomX Vaporfly Next% 2",
+      "category": "Running Shoes",
+      "price": 250,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Pink", "Green", "Black"],
+      "image_url": "https://example.com/images/zoomx-vaporfly-next2.jpg",
+      "description": "A high-performance marathon shoe built for speed, designed with ZoomX foam and a carbon plate for added propulsion.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 4,
+      "name": "Nike ZoomX Invincible 3",
+      "category": "Running Shoes",
+      "price": 180,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Black", "White", "Red"],
+      "image_url": "https://example.com/images/zoomx-invincible-3.jpg",
+      "description": "A soft and bouncy shoe ideal for long, slow miles with exceptional cushioning and comfort.",
+      "source": "BELIEVE IN THE RUN"
+    },
+    {
+      "id": 5,
+      "name": "Nike Vomero 17",
+      "category": "Running Shoes",
+      "price": 150,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Blue", "Grey", "Black"],
+      "image_url": "https://example.com/images/vomero-17.jpg",
+      "description": "A comfort-focused shoe designed for long runs and daily training, offering plush cushioning and stability.",
+      "source": "BELIEVE IN THE RUN"
+    },
+    {
+      "id": 6,
+      "name": "Nike Air Zoom Terra Kiger 6",
+      "category": "Running Shoes",
+      "price": 140,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Green", "Grey", "Yellow"],
+      "image_url": "https://example.com/images/terra-kiger-6.jpg",
+      "description": "A lightweight and durable shoe designed for trail runners, offering excellent grip and support.",
+      "source": "GEARJUNKIE"
+    },
+    
+    {
+      "id": 1,
+      "name": "Nike G.T. Jump 2",
+      "category": "Basketball Shoes",
+      "price": 200,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Black", "White", "Red"],
+      "image_url": "https://example.com/images/gt-jump-2.jpg",
+      "description": "Known for its excellent cushioning and impact protection, ideal for players who need energy return and soft landings.",
+      "source": [
+        "THE HOOPS GEEK",
+        "FOOTWEAR NEWS"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Nike Giannis Freak 6",
+      "category": "Basketball Shoes",
+      "price": 150,
+      "size_options": [7, 8, 9, 10, 11, 12, 13],
+      "color_options": ["Green", "Blue", "Black"],
+      "image_url": "https://example.com/images/giannis-freak-6.jpg",
+      "description": "Lightweight and breathable, designed for a fast and agile playing style, with a responsive fit and Zoom Air cushioning.",
+      "source": [
+        "#1 ATHLETIC SHOE REVIEW SITE",
+        "SPORTS ILLUSTRATED"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Nike KD 16",
+      "category": "Basketball Shoes",
+      "price": 180,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Purple", "Gold", "Black"],
+      "image_url": "https://example.com/images/kd-16.jpg",
+      "description": "A balanced shoe offering great comfort and support with Zoom Air cushioning, ideal for both offense and defense.",
+      "source": [
+        "THE HOOPS GEEK",
+        "SNEAKER NEWS"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Nike Sabrina 2",
+      "category": "Basketball Shoes",
+      "price": 140,
+      "size_options": [6, 7, 8, 9, 10],
+      "color_options": ["Pink", "White", "Black"],
+      "image_url": "https://example.com/images/sabrina-2.jpg",
+      "description": "Lightweight with great traction, designed for fast cuts and responsive movement on the court, with a stable grip.",
+      "source": [
+        "THE HOOPS GEEK",
+        "NIKE.COM"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Nike Air Zoom G.T. Cut 3",
+      "category": "Basketball Shoes",
+      "price": 170,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Black", "Grey", "Blue"],
+      "image_url": "https://example.com/images/air-zoom-gt-cut-3.jpg",
+      "description": "A shoe with ZoomX cushioning for a responsive and lightweight feel, designed for players requiring agility and quick movements.",
+      "source": [
+        "#1 ATHLETIC SHOE REVIEW SITE",
+        "FOOTWEAR NEWS"
+      ]
+},
+    {
+      "id": 1,
+      "name": "Nike Air Force 1",
+      "category": "Casual Shoes",
+      "price": 90,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["White", "Black", "Grey"],
+      "image_url": "https://example.com/images/air-force-1.jpg",
+      "description": "A classic silhouette with a leather upper and a cushioned sole for everyday comfort and durability. The iconic design features clean lines and a sleek look, perfect for casual wear.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 2,
+      "name": "Nike Blazer Mid '77",
+      "category": "Casual Shoes",
+      "price": 85,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["White/Red", "Black/White", "Grey/Blue"],
+      "image_url": "https://example.com/images/blazer-mid-77.jpg",
+      "description": "A vintage-inspired shoe with retro basketball style. Features a leather and suede upper with a cushioned midsole for comfort and a rubber outsole for traction.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 3,
+      "name": "Nike Air Max 1",
+      "category": "Casual Shoes",
+      "price": 130,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Red/White", "Black/Blue", "Grey/White"],
+      "image_url": "https://example.com/images/air-max-1.jpg",
+      "description": "An iconic sneaker featuring the signature Air Max cushioning for all-day comfort. The sleek design pairs well with casual outfits and provides durability with a classic silhouette.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 4,
+      "name": "Nike SB Dunk Low",
+      "category": "Casual Shoes",
+      "price": 110,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Black/White", "Grey/Red", "Navy/Gold"],
+      "image_url": "https://example.com/images/sb-dunk-low.jpg",
+      "description": "Originally designed for skateboarding, the SB Dunk Low has become a streetwear icon. It offers comfort with its padded collar and tongue, and the durable rubber outsole provides grip.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 5,
+      "name": "Nike Court Vision Low",
+      "category": "Casual Shoes",
+      "price": 75,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["White", "Black", "Navy"],
+      "image_url": "https://example.com/images/court-vision-low.jpg",
+      "description": "Inspired by 1980s basketball shoes, this sneaker features a leather upper with a cushioned insole and rubber outsole, offering a sleek look with a nod to retro basketball culture.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 1,
+      "name": "Nike Metcon 8",
+      "category": "Training Shoes",
+      "price": 130,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Black", "Grey", "Blue"],
+      "image_url": "https://example.com/images/metcon-8.jpg",
+      "description": "The Nike Metcon 8 is designed for stability and support during intense workouts, from weightlifting to HIIT. It features a durable rubber outsole for traction and an updated mesh upper for breathability.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 2,
+      "name": "Nike Free Metcon 5",
+      "category": "Training Shoes",
+      "price": 120,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Black", "White", "Red"],
+      "image_url": "https://example.com/images/free-metcon-5.jpg",
+      "description": "Built for flexibility and mobility, the Nike Free Metcon 5 is lightweight yet durable, with a flexible sole to support multi-directional movements. Ideal for athletes who engage in varied fitness routines.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 3,
+      "name": "Nike ZoomX SuperRep 3",
+      "category": "Training Shoes",
+      "price": 160,
+      "size_options": [7, 8, 9, 10, 11],
+      "color_options": ["Black", "Pink", "Grey"],
+      "image_url": "https://example.com/images/zoomx-superrep-3.jpg",
+      "description": "Designed for high-intensity interval training (HIIT), the Nike ZoomX SuperRep 3 offers excellent cushioning and stability, allowing for explosive movements with maximum comfort.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 4,
+      "name": "Nike Air Zoom SuperRep 2",
+      "category": "Training Shoes",
+      "price": 130,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Blue", "White", "Black"],
+      "image_url": "https://example.com/images/air-zoom-superrep-2.jpg",
+      "description": "Featuring a responsive Zoom Air unit and a breathable upper, the Nike Air Zoom SuperRep 2 is optimized for short, high-intensity sessions. The shoe provides support for lateral movements and explosive jumps.",
+      "source": "NIKE.COM"
+    },
+    {
+      "id": 5,
+      "name": "Nike React Metcon Turbo",
+      "category": "Training Shoes",
+      "price": 150,
+      "size_options": [7, 8, 9, 10, 11, 12],
+      "color_options": ["Black", "Red", "White"],
+      "image_url": "https://example.com/images/react-metcon-turbo.jpg",
+      "description": "The React Metcon Turbo offers a smooth and stable feel with a Nike React foam midsole. It combines durability with energy return, making it great for short sprints, lifts, and jumps.",
+      "source": "NIKE.COM"
     }
-]
+
+  ]
