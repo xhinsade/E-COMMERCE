@@ -11,16 +11,29 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <div class="navbar-container">
-        <h1 class="navbar-logo">Nike Shoes</h1>
-        <ul class="navbar-links">
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
-            <li><a href="shop.html"><i class="fas fa-store"></i> Shop</a></li>
-            <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
-        </ul>
-    </div>
+  <div class="navbar-container">
+    <h1 class="navbar-logo">Nike Shoes</h1>
+    <ul class="navbar-links">
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      <li><a href="shop.html"><i class="fas fa-store"></i> Shop</a></li>
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+      <!-- Profile Dropdown -->
+      <li class="relative">
+        <a href="#" class="profile-link flex items-center space-x-2 text-gray-700 hover:text-gray-900">
+          <i class="fas fa-user-circle text-xl"></i>
+          <span>Profile</span>
+        </a>
+        <div class="dropdown-content absolute right-0 w-48 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 hidden">
+          <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Account</a>
+          <a href="orders.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Orders</a>
+          <a href="#" onclick="handleLogout()" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Hero Banner -->
@@ -149,6 +162,8 @@
 <footer class="footer">
     <p>&copy; 2024 Nike Shoes Collection</p>
 </footer>
+
+  <script src="home.js"></script>
 
 </body>
 </html>
