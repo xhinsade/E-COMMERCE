@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike Shoes Collection - Shop</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="shop.css">
 </head>
 <body>
@@ -35,8 +35,6 @@
   </div>
 </nav>
 
-
-
 <!-- Shop Header -->
 <section class="shop-header">
     <h2>Shop Our Latest Nike Collection</h2>
@@ -49,33 +47,34 @@
     <div class="filters-container">
         <div class="filter-category">
             <label for="category">Category</label>
-            <select id="category" name="category">
+            <select id="category" name="category" onchange="applyFilters()">
                 <option value="all">All</option>
-                <option value="running">Running Shoes</option>
-                <option value="basketball">Basketball Shoes</option>
-                <option value="casual">Casual Shoes</option>
-                <option value="training">Training Shoes</option>
+                <option value="Running Shoes">Running Shoes</option>
+                <option value="Basketball Shoes">Basketball Shoes</option>
+                <option value="Casual Shoes">Casual Shoes</option>
+                <option value="Training Shoes">Training Shoes</option>
             </select>
         </div>
-     <div class="filter-price">
-    <label for="price">Price Range</label>
-    <select id="price" name="price">
-        <option value="0-50">$0 - $50</option>
-        <option value="51-100">$51 - $100</option>
-        <option value="101-150">$101 - $150</option>
-        <option value="151-200">$151 - $200</option>
-        <option value="201-300">$201 - $300</option>
-    </select>
-</div>
-
+        <div class="filter-price">
+            <label for="price">Price Range</label>
+            <select id="price" name="price" onchange="applyFilters()">
+                <option value="all">All</option>
+                <option value="0-100">$0 - $100</option>
+                <option value="101-150">$101 - $150</option>
+                <option value="151-200">$151 - $200</option>
+                <option value="201-300">$201 - $300</option>
+            </select>
+        </div>
         <div class="filter-size">
             <label for="size">Size</label>
-            <select id="size" name="size">
+            <select id="size" name="size" onchange="applyFilters()">
                 <option value="all">All</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
         </div>
     </div>
@@ -86,13 +85,11 @@
     <!-- Products will be dynamically inserted here -->
 </section>
 
+<!-- Footer -->
+<footer class="footer">
+    © <strong><span>2024 Nike Shoes Collection</span></strong>. All Rights Reserved
+</footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        © <strong><span>2024 Nike Shoes Collection</span></strong>. All Rights Reserved
-    </footer>
-
-    <script src="shop.js"></script>
-
+<script src="shop.js"></script>
 </body>
 </html>
