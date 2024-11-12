@@ -176,7 +176,6 @@ function handleLogout() {
     }
 }
 
-// Function to fetch and display products
 fetch('products.json')
     .then(response => response.json()) // Parse JSON response
     .then(products => {
@@ -192,11 +191,11 @@ fetch('products.json')
             productCard.classList.add('product-card');
 
             productCard.innerHTML = `
-                <img src="${product.imageUrl}" alt="${product.name}">
+                <img src="${product.image_url}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p class="product-description">${product.description}</p>
-                <p class="product-price">${product.price}</p>
-                <button class="btn-primary">Add to Cart</button>
+                <p class="product-price">$${product.price}</p>
+                <button class="btn-primary" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
             `;
 
             // Append the card to the product grid
