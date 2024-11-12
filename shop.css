@@ -1,4 +1,4 @@
-/* Reset and basic styles */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,287 +6,211 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* More modern font */
-    background-color: #fafafa; /* Lighter background */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Navigation Bar */
+/* Navbar */
 .navbar {
     background-color: #111;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    color: white;
+    padding: 10px;
 }
 
 .navbar-container {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .navbar-logo {
-    color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
 }
 
 .navbar-links li {
-    display: inline-block;
+    margin-left: 20px;
 }
 
-.navbar-links a {
+.navbar-links li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    font-size: 1rem;
 }
 
-.navbar-links a:hover {
-    color: #e60012;
+.navbar-links li a:hover {
+    text-decoration: underline;
 }
 
-.navbar-links a i {
-    font-size: 18px;
-}
-
-/* Main Shop Container */
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 100px;
-}
-
-/* Shop Title */
-.shop-title {
+/* Shop Header */
+.shop-header {
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: #111;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+.shop-header h2 {
+    font-size: 2rem;
 }
 
 /* Filters Section */
 .filters {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+.filters h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.filters-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    gap: 20px; /* Adds space between the filter items */
 }
 
-.filters select {
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    width: 48%;
+.filter-category, .filter-price, .filter-size {
+    width: 30%; /* Ensures equal width */
+    padding: 10px;
 }
 
-.filters select:focus {
+.filter-category select,
+.filter-price select,
+.filter-size select {
+    width: 100%;
+    padding: 12px; /* Provides ample padding for the select box */
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Light border color for the select */
+    border-radius: 5px; /* Rounded corners for consistency */
+    background-color: #fff;
+    color: #333; /* Dark text for readability */
+    font-weight: 500;
+}
+
+/* Optional: Add icons from Font Awesome inside the dropdown */
+.filter-category select,
+.filter-price select,
+.filter-size select {
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/fonts/fa-solid-900.woff2');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+
+/* Additional Styling */
+.filter-category select:hover,
+.filter-price select:hover,
+.filter-size select:hover {
+    border-color: #ff6600; /* Change border color when hovering */
+}
+
+/* Add focus state for better accessibility */
+.filter-category select:focus,
+.filter-price select:focus,
+.filter-size select:focus {
+    border-color: #ff6600; /* Focus color */
     outline: none;
-    border-color: #e60012;
 }
 
-/* Product Display Section */
-.products {
+/* Styling for dropdown select options */
+.filter-category option,
+.filter-price option,
+.filter-size option {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-category option:hover,
+.filter-price option:hover,
+.filter-size option:hover {
+    background-color: #f0f0f0; /* Lighter background when hovering over an option */
+}
+
+
+/* Product Grid */
+.product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Product Card */
 .product-card {
     background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    height: 100%;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
 }
 
-.product-card h3 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
+.product-description {
+    font-size: 1rem;
+    color: #555;
 }
 
-.product-card p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.product-card .price {
-    font-size: 20px;
+.product-price {
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #e60012;
-    margin-bottom: 15px;
+    margin: 10px 0;
 }
 
 .btn-primary {
-    background-color: #e60012;
+    background-color: #ff6600;
     color: white;
-    padding: 14px;
     border: none;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    width: 100%;
-    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #d10010;
+    background-color: #e65c00;
 }
 
-/* Cart Summary Section */
-.cart-summary {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.cart-summary p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 20px;
-}
-
-.cart-summary button {
-    padding: 14px 30px;
-    background-color: #111;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.cart-summary button:hover {
-    background-color: #e60012;
-}
-
-/* Header Cart Button */
-.header .cart button {
-    background-color: #e60012;
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
+/* Pagination */
+.pagination {
     display: flex;
-    align-items: center;
-    gap: 5px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.header .cart button:hover {
-    background-color: #d10010;
+.page-btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
 }
 
-.cart-summary {
-    margin-top: 30px;
+.page-btn:hover {
+    background-color: #f4f4f4;
 }
 
 /* Footer */
-footer {
-    background-color: #111;
-    color: white;
+.footer {
     text-align: center;
     padding: 20px;
-    margin-top: 60px;
-}
-
-/* Modal Background */
-.modal {
-    display: none; /* Initially hidden */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: white;
-    margin: 15% auto; /* Center the modal */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* You can change the width of the modal */
-    max-width: 600px; /* Set a max-width */
-    position: relative; /* Position relative to allow positioning of the close button */
-}
-
-/* Close Button Style */
-.close-btn {
-    position: absolute; /* Position relative to the modal-content */
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    font-weight: bold;
-    color: #aaa;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Style for the Modal Content Text */
-#cart-items {
-    margin-bottom: 20px;
-}
-
-#total-price {
-    font-weight: bold;
-}
-
-
-.close-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    background-color: #111;
+    color: white;
 }
 
 /* Dropdown Styling */
@@ -333,3 +257,31 @@ footer {
 .navbar .dropdown:hover .dropdown-content {
     display: block;
 }
+/* Hide dropdown content by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Make dropdown visible when it's active */
+.dropdown-content.show {
+    display: block;
+}
+

@@ -35,71 +35,67 @@
   </div>
 </nav>
 
-    <!-- Main Shop Container -->
-    <div class="container">
-        <h2 class="shop-title">Nike Shoes Collection</h2>
 
-        <!-- Filters Section -->
-        <div class="filters">
-            <select>
-                <option value="newest">Newest Arrivals</option>
-                <option value="popular">Most Popular</option>
-                <option value="low-to-high">Price: Low to High</option>
-                <option value="high-to-low">Price: High to Low</option>
+
+<!-- Shop Header -->
+<section class="shop-header">
+    <h2>Shop Our Latest Nike Collection</h2>
+    <p>Explore our new arrivals and find the perfect pair for every occasion.</p>
+</section>
+
+<!-- Filters Section -->
+<section class="filters">
+    <h3>Filter By:</h3>
+    <div class="filters-container">
+        <div class="filter-category">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <option value="all">All</option>
+                <option value="running">Running Shoes</option>
+                <option value="basketball">Basketball Shoes</option>
+                <option value="casual">Casual Shoes</option>
+                <option value="training">Training Shoes</option>
             </select>
-            <select>
-                <option value="all">All Sizes</option>
-                <option value="7">Size 7</option>
-                <option value="8">Size 8</option>
-                <option value="9">Size 9</option>
+        </div>
+     <div class="filter-price">
+    <label for="price">Price Range</label>
+    <select id="price" name="price">
+        <option value="0-50">$0 - $50</option>
+        <option value="51-100">$51 - $100</option>
+        <option value="101-150">$101 - $150</option>
+        <option value="151-200">$151 - $200</option>
+        <option value="201-300">$201 - $300</option>
+    </select>
+</div>
+
+        <div class="filter-size">
+            <label for="size">Size</label>
+            <select id="size" name="size">
+                <option value="all">All</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
         </div>
-
-        <!-- Product Display Section -->
-        <section class="products">
-            <div class="product-card">
-                <img src="images/nike-air-max.jpg" alt="Nike Air Max">
-                <h3>Air Max 270</h3>
-                <p>Revolutionary cushioning for all-day comfort.</p>
-                <p class="price">$120</p>
-                <button class="btn-primary" onclick="addToCart('Air Max 270', 120)">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/nike-react.jpg" alt="Nike React Infinity">
-                <h3>React Infinity</h3>
-                <p>Engineered for smoother strides and reduced risk of injury.</p>
-                <p class="price">$150</p>
-                <button class="btn-primary" onclick="addToCart('React Infinity', 150)">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/nike-zoom-fly.jpg" alt="Nike Zoom Fly">
-                <h3>Zoom Fly</h3>
-                <p>Designed for speed and unmatched comfort on race day.</p>
-                <p class="price">$130</p>
-                <button class="btn-primary" onclick="addToCart('Zoom Fly', 130)">Add to Cart</button>
-            </div>
-
-            <!-- Add more products as needed -->
-        </section>
-
-        <!-- Cart Summary -->
-        <section class="cart-summary">
-            <p>Items in Cart: <span id="cart-item-count">0</span></p>
-                <!-- Header -->
-    <div class="header">
-        <div class="header-left">
-            <img src="images/logo.png" alt="Nike Logo" class="logo-img">
-            <h1>Nike</h1>
-        </div>
-        <div class="cart">
-            <button onclick="viewCart()">View Cart (<span id="cart-count">0</span>)</button>
-        </div>
-    </divcl>
-            <button class="btn-primary" onclick="proceedToCheckout()">Go to Checkout</button>
-        </section>
     </div>
+</section>
+
+<!-- Product Grid -->
+<section class="product-grid" id="product-grid">
+    <!-- Products will be dynamically inserted here -->
+</section>
+
+
+<!-- Pagination Section -->
+<section class="pagination">
+    <button class="page-btn">Previous</button>
+    <button class="page-btn">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn">Next</button>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">

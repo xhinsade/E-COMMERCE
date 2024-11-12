@@ -101,7 +101,6 @@ function updateCartCount() {
 
 // Update cart count when the page loads
 document.addEventListener("DOMContentLoaded", updateCartCount);
-<!-- Shop Page (shop.html) -->
 // Function to add items to the cart
 function addToCart(productName, productPrice) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -136,4 +135,74 @@ function updateCartCount() {
 
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
+// Example JavaScript to filter products by price
+document.getElementById("price").addEventListener("input", function() {
+    let priceValue = this.value;
+    let priceText = "$" + priceValue + " - $300";
+    document.querySelector(".filter-price span").textContent = priceText;
 
+    // Here you would implement logic to filter products based on the selected price
+    // Example: Show products within the selected price range
+});
+
+// JavaScript to handle Profile Dropdown Toggle
+document.querySelector('.profile-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevents default link behavior
+    const dropdown = this.nextElementSibling; // The .dropdown-content
+    dropdown.classList.toggle('show'); // Toggles the visibility by adding/removing the 'show' class
+});
+
+
+// Function to navigate to the Orders page
+function goToOrders() {
+    // Add any additional logic here if needed (e.g., fetching order data)
+    window.location.href = "orders.html"; // Navigates to the Orders Page
+}
+
+// Function to handle user logout without clearing data
+function handleLogout() {
+    // Ask for user confirmation before logging out
+    const confirmation = confirm("Are you sure you want to log out?");
+    
+    if (confirmation) {
+        // Alert the user that they have logged out, but their data is still available
+        alert("You have been logged out. Your data is still available for next login.");
+        
+        // Redirect the user to the login page after confirmation
+        window.location.href = "index.html"; // Redirects to the Login Page
+    } else {
+        // If the user cancels, show an alert confirming the action was canceled
+        alert("Logout canceled. You are still logged in.");
+    }
+}
+
+// Function to fetch and display products
+fetch('products.json')
+    .then(response => response.json()) // Parse JSON response
+    .then(products => {
+        // Get the product grid container
+        const productGrid = document.getElementById('product-grid');
+
+        // Clear any existing content in the product grid
+        productGrid.innerHTML = "";
+
+        // Loop through the products and create HTML for each
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+
+            productCard.innerHTML = `
+                <img src="${product.imageUrl}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p class="product-description">${product.description}</p>
+                <p class="product-price">${product.price}</p>
+                <button class="btn-primary">Add to Cart</button>
+            `;
+
+            // Append the card to the product grid
+            productGrid.appendChild(productCard);
+        });
+    })
+    .catch(error => {
+        console.error("Error fetching product data:", error);
+    });

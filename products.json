@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Air Max 270",
+        "description": "A fan-favorite with unparalleled comfort and bold design. This shoe has topped the charts.",
+        "price": "$120",
+        "imageUrl": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/gorfwjchoasrrzr1fggt/AIR+MAX+270.png"},
+    {
+        "name": "React Infinity",
+        "description": "Engineered for comfort during long runs, the React Infinity continues to lead the way for athletes.",
+        "price": "$150",
+        "imageUrl": "https://example.com/resources/nike-react-2024.jpeg"
+    },
+    {
+        "name": "Zoom Fly",
+        "description": "Designed for speed, the Zoom Fly has become a staple for serious runners.",
+        "price": "$130",
+        "imageUrl": "https://example.com/resources/nike-zoom-fly.jpeg"
+    }
+]
