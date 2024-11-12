@@ -139,7 +139,6 @@ body {
     background-color: #f0f0f0; /* Lighter background when hovering over an option */
 }
 
-
 /* Product Grid */
 .product-grid {
     display: grid;
@@ -257,6 +256,7 @@ body {
 .navbar .dropdown:hover .dropdown-content {
     display: block;
 }
+
 /* Hide dropdown content by default */
 .dropdown-content {
     display: none;
@@ -284,4 +284,3 @@ body {
 .dropdown-content.show {
     display: block;
 }
-
