@@ -163,26 +163,32 @@ body {
 }
 
 
+
 /* Highlights */
 .highlights {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: to limit width on larger screens */
+    border-radius: 10px; /* Optional: for rounded corners */
 }
-
-.highlight {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    flex: 1 1 30%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+/* Style for the 'Why Choose Nike?' heading */
+.highlights h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
-
 .highlight:hover {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
+
 
 .highlight h3 {
     font-size: 1.5rem;
@@ -192,6 +198,15 @@ body {
 
 .highlight p {
     color: #555;
+}
+@media (max-width: 768px) {
+    .highlight h2 {
+        font-size: 2rem;
+    }
+
+    .highlight p {
+        font-size: 1rem;
+    }
 }
 
 /* Product Grid */
@@ -221,11 +236,111 @@ body {
     border-radius: 8px;
     margin-bottom: 1rem;
 }
+/* Product Showcase */
+.products {
+    display: flex;
+    flex-direction: column;      /* Stack content vertically */
+    align-items: center;         /* Centers content horizontally */
+    justify-content: center;     /* Centers content vertically if necessary */
+    text-align: center;          /* Centers the text */
+    padding: 50px 20px;
+    background-color: #f9f9f9;  /* Light background color */
+}
+
+.products h2 {
+    font-size: 2.8rem;           /* Large heading */
+    color: #333;                 /* Dark color for text */
+    margin-bottom: 1rem;         /* Space below the heading */
+    font-weight: bold;           /* Bold text */
+}
+
+.products p {
+    font-size: 1.2rem;           /* Readable font size */
+    color: #555;                 /* Lighter text color */
+    max-width: 800px;            /* Limits width of paragraph */
+    line-height: 1.6;            /* Space between lines */
+    margin-bottom: 2rem;         /* Space below paragraph */
+}
+
+@media (max-width: 768px) {
+    .products h2 {
+        font-size: 2.2rem;       /* Adjust font size for smaller screens */
+    }
+
+    .products p {
+        font-size: 1rem;         /* Adjust font size for smaller screens */
+    }
+}
+
+/* Customer Reviews Section */
+.reviews {
+    display: flex;
+    flex-direction: column;      /* Stack content vertically */
+    align-items: center;         /* Centers content horizontally */
+    text-align: center;          /* Centers text inside the section */
+    padding: 50px 20px;          /* Spacing around the section */
+    background-color: #f9f9f9;   /* Light background color */
+    border-radius: 10px;         /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px;            /* Limit width on large screens */
+    margin: 0 auto;              /* Center section horizontally on page */
+}
+
+.reviews h2 {
+    font-size: 2.5rem;           /* Large heading */
+    color: #333;                 /* Darker color for the heading */
+    margin-bottom: 1rem;         /* Space below the heading */
+    font-weight: bold;           /* Bold text for emphasis */
+}
+
+.reviews p {
+    font-size: 1.2rem;           /* Font size for readability */
+    color: #555;                 /* Lighter color for the paragraph */
+    margin-bottom: 2rem;         /* Space below paragraph */
+    max-width: 700px;            /* Optional: limit paragraph width */
+}
+
+.review-list {
+    list-style: none;            /* Remove default list style */
+    padding: 0;
+    max-width: 600px;            /* Limit width of reviews */
+}
+
+.review-list li {
+    font-size: 1.1rem;           /* Increase font size slightly */
+    color: #333;                 /* Darker text for contrast */
+    padding: 0.5rem 1rem;        /* Padding for each review */
+    background-color: #ffffff;   /* White background for reviews */
+    margin-bottom: 1rem;         /* Space between reviews */
+    border-radius: 8px;          /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    font-style: italic;          /* Italicize to emphasize quotes */
+}
+
+.review-list li:last-child {
+    margin-bottom: 0;            /* Remove margin from the last item */
+}
+
+@media (max-width: 768px) {
+    .reviews h2 {
+        font-size: 2rem;         /* Adjust heading font size for mobile */
+    }
+
+    .reviews p {
+        font-size: 1rem;         /* Adjust paragraph font size for mobile */
+    }
+
+    .review-list li {
+        font-size: 1rem;         /* Adjust review font size for mobile */
+    }
+}
+
 
 .product-card h3 {
     font-size: 1.2rem;
     margin: 0.5rem 0;
     color: #333;
+    text-align: center;
 }
 
 .product-card p {
@@ -377,3 +492,4 @@ body {
 .dropdown-content.show {
     display: block;
 }
+
